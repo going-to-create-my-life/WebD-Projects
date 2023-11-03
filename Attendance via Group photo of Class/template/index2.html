@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar">
+      <div id="logo">
+        <h3>Lecture Attendence</h3>
+      </div>
+      <div id="options">
+        <button onclick="fun()">Log in</button>
+      </div>
+    </div>
+    <!-- MAIN PAGE -->
+    <div id="main">
+      <img src="../static/1.svg" alt="Bottom-Right" id="img1" />
+      <img src="../static/2.svg" alt="Bottom-Right2" id="img2" />
+      <img src="../static/3.svg" alt="Bottom-Left2" id="img3" />
+      <img src="../static/4.svg" alt="Bottom-Left" id="img4" />
+      <img src="../static/5.svg" alt="Top-Right" id="img5" />
+      <img src="../static/6.svg" alt="mid" id="img6" />
+      <img src="../static/7.svg" alt="bg-right" id="img7" />
+      <img src="../static/8.svg" alt="bg-left" id="img8" />
+    <!-- LOG IN -->
+    <div id="login_page">
+      <span id="welcome">Welcome</span>
+      <form action="/dashboard" method="post">
+        <label for="username">U s e r n a m e</label>
+      <input id="user" type="text" placeholder="Type here....." value="" name="username">
+      <label for="password">P a s s w o r d</label>
+      <input id="pass" type="password" placeholder="Type Secretly...." name="password">
+      <button id="btn">SUBMIT</button>
+      </form>
+    </div>
+    </div>
+
+
+
+    <script>
+      page = document.getElementById('login_page');
+      a = window.getComputedStyle(page,null);
+      btn = document.getElementById('btn');
+      let v = ((a.getPropertyValue("width"))/19.2);
+      a.getPropertyValue("right") = (100-((a.getPropertyValue("width"))/19.2))/2;
+      function fun() {
+        if(page.style.display == 'none'){
+            page.style.display = 'flex';
+            console.log('Done if');
+        }
+        else{
+          page.style.display = 'none';
+          console.log('Done else');
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+
+
+/* NAVBAR */
+#navbar{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    background-color: black;
+    color: white;
+}
+#design{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 41px;
+    margin-left: 4vw;
+    display: none;
+    background-color: black;
+    color: white;
+    outline-style:none;
+    border: none;
+}
+#logo{
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 6%;
+}
+#options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 75vw;
+    gap: 2vw;
+    padding: 4vw;
+}
+#options button{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(2,154,166);
+    padding: 4px 13px;
+    border-radius: 31%;
+}
+#a{
+  text-decoration: none;
+    color: white;
+    background-color: rgb(2,154,166);
+    padding: 4px 13px;
+    border-radius: 31%;
+}
+#options a:hover{
+    box-shadow: 0 2px white;
+}
+
+@media screen and (max-width:500px) {
+    #logo{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 700px) {
+    #design{
+        display: inline;
+    }
+}
+
+/* MAIN PAGE */
+#main{
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90vh;
+}
+
+/* SIDE WINDOW */
+#side_window{
+    background-color: #3876BF;
+    width: 55vw;
+    position: absolute;
+    height: 69vh;
+    top: 10vh;
+    left: 0vw;
+    border-radius: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+    visibility: hidden;
+    height: 90vh;
+}
+#side_window a{
+    color: #FFF0CE;
+    text-decoration: none;
+}
+#side_window a:hover{
+    box-shadow: 0 2px #FF4B91;
+}
+
+/* CALENDER */
+#main2{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+}
+.wrapper{
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+/* MAIN BAR */
+#bar{
+    background-color: #3876BF;
+    height: 8vh;
+    display: inline-block;
+    position: absolute;
+    width: 60vw;
+    top: 85vh;
+    right: 20vw;
+    border-radius: 27%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+#bar a{
+    color: #FFF0CE;
+    text-decoration: none;
+}
+#bar a:hover{
+    box-shadow: 0 2px #FF4B91;
+}
+@media screen and (max-width:700px) {
+    #bar{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: sans-serif;
+  /* background-color: #eeeeee; */
+}
+
+.file-upload {
+  background-color: #ffffff;
+  width: 68vw;
+  margin: 0 auto;
+  padding: 20px;
+  visibility: hidden;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
