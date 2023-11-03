@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+#main{
+    height: 100vh;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+img{
+    position: relative;
+    height: 25vh;
+    bottom: -69vh;
+}
+#enemy{
+    background-image: url(enemy.png);
+    height: 20vh;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    animation: enemyShow 4.5s ease-in-out 0s infinite;
+    position: absolute;
+    bottom: 0;
+}
+@keyframes enemyShow {
+    0%{
+        left: 18vw;
+    }
+    100%{
+        left: -100vw;
+    }
+}
+@keyframes jump {
+    0%{
+        bottom: -69vh;
+    }
+    50%{
+        bottom: -24vh;
+    }
+    100%{
+        bottom: -69vh;
+    }
+}
+/* SCORE */
+#score{
+    position: relative;
+    top: 3vh;
+    left: 82vw;
+    width: 14vw;
+    border: 2px solid red;
+    background-color: black;
+    border-radius: 23px;
+    padding-top: 0.4vh;
+    color: white;
+    text-align: center;
+    font-size: 1.8vw;
+}
+/* GAME OVER */
+#game_over{
+    display: none;
+    text-align: center;
+    color: red;
+    font-size: 20vh;
+    font-weight: 900;
+}
+@media(maX-width : 800px) {
+    #main{    
+        height: 63vw;
+        margin-top: 85px;
+    }   
+    img{
+        position: relative;
+        height: 20vw;
+        top: 39vw;
+    }
+    #enemy{
+        position: relative;
+        height: 17vw;
+        top: 23vw;
+        animation: enemyShow 3s ease-in-out 0s infinite;
+    }
+    @keyframes jump {
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-30vw);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+}

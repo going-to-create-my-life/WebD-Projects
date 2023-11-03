@@ -1,0 +1,238 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(248, 242, 207);
+}
+/* NAVBAR */
+#navbar{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px rgba(180, 137, 137, 0.3);
+    background-color: rgb(232, 211, 55);
+    position: sticky;
+    top:0;
+    justify-content: space-around;
+    z-index: 1;
+}
+#logo{
+    height: 10vh;
+    width: auto;
+}
+#lines{
+    font-size: 25px;
+    font-weight: 900;
+padding-left: 75vw;
+    
+}
+
+/* MAIN */
+#main{
+    display: flex;
+    flex-wrap:wrap;
+}
+#main img{
+    display: inline;
+    height: auto;
+    width: auto; 
+    padding: 30px 80px;
+}
+#offer{
+    background-color: rgb(14, 167, 14);
+    color: white;
+    display: inline-block;
+    padding: 5px;
+    align-self: flex-start;
+}
+#main h1{
+    zoom: 3;
+    font-size: 30px;
+}
+#sidemain{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+}
+#sidemain span{
+    align-self: flex-start;
+}
+#btn{
+    zoom: 1.2;
+    padding: 5px;
+    font-weight: 700;
+    background-color: rgba(242, 171, 29, 0.964);
+    border: none;
+    align-self: flex-start;
+}
+#btn:hover{
+     background-color: rgba(249, 192, 48, 0.964);
+}
+
+
+
+/* DISCOUNT */
+#discount{ height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 3px rgba(180, 137, 137, 0.6); */
+}
+#discount img{
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+    margin-top: auto;
+}
+#delivery,#voucher,#fresh{
+    display: flex;
+    margin: auto 20px;
+    padding: 10px;
+}
+#fresh:hover{
+    box-shadow: 2px 2px rgba(180, 137, 137, 0.6);
+}
+#delivery:hover{
+    box-shadow: 2px 2px rgba(180, 137, 137, 0.6);
+}
+#voucher:hover{
+    box-shadow: 2px 2px rgba(180, 137, 137, 0.6);
+}
+#discount h3{
+    font-weight: 900;
+    font-size: 20px;
+}
+#button_menu{
+    height: 50px;
+}
+#menu{
+    color: white;
+    display: block;
+    
+    background-color: rgb(5, 147, 34);
+    padding: 4px;
+    border: none;
+   margin: auto;
+   margin-top: 40px;
+}
+#button_menu h2{
+    text-align: center;
+    padding-top: 30px;
+    font-weight: 900;
+}
+
+
+
+
+
+/* GRID */
+#dishes{
+    display: grid;
+    grid-template-areas: 
+    "i1 i1 i2 i3"
+    "i1 i1 i2 i7"
+    "i4 i5 i6 i7";
+    gap: 1rem;
+    margin: 0 10vw;
+}
+.img1{
+    grid-area: i1;
+}
+.img2{
+    grid-area: i2;
+}
+.img3{
+    grid-area: i3;
+}
+.img4{
+    grid-area: i4;
+}
+.img5{
+    grid-area: i5;
+}
+.img6{
+    grid-area: i6;
+}
+.img7{
+    grid-area: i7;
+}
+.i{
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+}
+.i:hover{
+    transform: scale(1.2);
+    
+}
+
+
+
+
+
+/* FOOTER */
+.bg{
+    background-color: rgb(233, 220, 149);
+}
+footer{
+    margin-top: 8vh;
+    
+}
+#FollowUs input{
+    background-color: white;
+    padding: 5px;
+}
+footer h5{
+    font-size: 20px;
+}
+#last{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 10vw;
+    padding: 8vh 0;
+    
+}
+
+/* MEDIA */
+
+@media(max-width:1240px){
+    #sidemain{
+        padding-left: 10px;
+    }
+}
+    
+@media(max-width:672px) {
+    #main h1{
+        zoom: 2;
+        font-size: 24px;
+        align-self: flex-start;
+    }
+    #main img{
+        display: inline;
+        height: 25vh;
+        width: 50vw; 
+        padding: 30px 80px;
+    }    
+    #logo{
+        height: 7vh;
+        width: auto;
+    }
+    #lines{
+        font-size: 25px;
+        font-weight: 900;
+    padding-left: 50vw;
+        
+    }
+
+}
+@media(max-width:1110px){
+    #discount{
+        flex-direction: column;
+        height: 23rem;
+        gap: 20px;
+        overflow:scroll;
+    }
+}

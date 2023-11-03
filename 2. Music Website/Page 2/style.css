@@ -1,0 +1,107 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR */
+#navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  background-color: rgb(72, 6, 165);
+  color: white;
+}
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+  font-size: 30px;
+}
+#options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 75vw;
+  gap: 2vw;
+  padding: 4vw;
+}
+#options a {
+  text-decoration: none;
+  color: white;
+}
+#options a:hover {
+  box-shadow: 0 2px white;
+}
+
+/* MAIN AREA */
+#main {
+  height: 70vh;
+  width: 81vw;
+  background-image: url("main_image.png");
+  background-position: center;
+  margin: 6vh auto;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+#music {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4vh;
+}
+.music_blocks {
+  border: 2px solid white;
+  border-radius: 12px;
+  color: white;
+  height: 35px;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(48, 1, 77, 0.755);
+  border-radius: 23px;
+  padding: 0 2vw;
+}
+.music_blocks h4{
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.img_music {
+  width: 25px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+/* FOOTER */
+footer {
+  position: absolute;
+  bottom: 0px;
+  height: 10vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+}
+footer input {
+  width: 80vw;
+  margin: 0px 10vw;
+  padding: 1vh 0;
+  cursor: pointer;
+}
+#icons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+button{
+    zoom: 1.4;
+    cursor: pointer;
+}

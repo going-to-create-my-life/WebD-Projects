@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* NAVBAR */
+      #nav {
+        background-color: black;
+        color: white;
+        display: flex;
+        height: 44px;
+        font-size: 30px;
+        font-weight: 900;
+        align-items: flex-end;
+        padding: 0 13px;
+      }
+
+      /* CONTENT */
+      #content {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        flex-direction: row;
+      }
+      #boxes {
+        width: 50vw;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: repeat(3, 10vw);
+        grid-template-rows: repeat(3, 10vw);
+        justify-content: center;
+        align-content: center;
+      }
+      .box {
+        display: inline-block;
+        transition: 0.5s ease-in-out;
+        font-size: 10vw;
+        text-align: center;
+      }
+      .box:hover {
+        background-color: rgba(37, 217, 157, 0.403);
+      }
+      .btop {
+        border-top: 2px solid black;
+      }
+      .bleft {
+        border-left: 2px solid black;
+      }
+      .bbottom {
+        border-bottom: 2px solid black;
+      }
+      .bright {
+        border-right: 2px solid black;
+      }
+      #side_items {
+        width: 40vw;
+        margin: 10vw 0;
+      }
+      #btn_reset {
+        margin-top: 1vw;
+        padding: 6px;
+        font-size: 20px;
+      }
+
+      /* MEDIA */
+      @media (max-width: 999px) {
+        #boxes {
+          width: 100vw;
+          height: 40vh;
+          padding-top: 0;
+        }
+        #side_items {
+          width: 100vw;
+          text-align: center;
+        }
+      }
+      @media (max-width: 500px) {
+        #boxes {
+          grid-template-columns: repeat(3, 18vw);
+          grid-template-rows: repeat(3, 18vw);
+        }
+        .box {
+          font-size: 18vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <navbar id="nav"> Tic-Tac-Toe </navbar>
+
+    <!-- CONTENT -->
+    <div id="content">
+      <div id="boxes">
+        <div class="box bbottom bright" id="box1"></div>
+        <div class="box bbottom bright bleft" id="box2"></div>
+        <div class="box bbottom bleft" id="box3"></div>
+        <div class="box btop bbottom bright" id="box4"></div>
+        <div class="box btop bbottom bright bleft" id="box5"></div>
+        <div class="box btop bbottom bleft" id="box6"></div>
+        <div class="box btop bright" id="box7"></div>
+        <div class="box btop bright bleft" id="box8"></div>
+        <div class="box btop bleft" id="box9"></div>
+      </div>
+
+      <div id="side_items">
+        <h1>WELCOME TO PLAY HERE</h1>
+        <h3>TURN FOR "X"</h3>
+        <button id="btn_reset">Reset</button>
+      </div>
+    </div>
+    <script>
+      let boxes = Array.from(document.getElementsByClassName("box"));
+      let turn = "X";
+      // CHANGE TURN
+      change_turn = () => {
+        if (turn == "X") {
+          turn = "O";
+        } else {
+          turn = "X";
+        }
+      };
+
+      // GAME LOGIC
+      boxes.forEach((element) => {
+        element.addEventListener("click", () => {
+          let index = boxes.indexOf(element) + 1;
+          document.getElementById("box" + index).innerText = turn;
+          change_turn();
+          document
+            .getElementById("side_items")
+            .getElementsByTagName("h3")[0].innerText =
+            "TURN FOR " + `"${turn}"`;
+          check_win();
+        });
+      });
+
+      // RESET ALL
+      document.getElementById("btn_reset").addEventListener("click", () => {
+        boxes.forEach((element) => {
+          element.innerText = "";
+        });
+        document
+          .getElementById("side_items")
+          .getElementsByTagName("h3")[0].innerText = ` TURN FOR "X" `;
+        document
+          .getElementById("side_items")
+          .getElementsByTagName("h3")[0].style = "";
+        turn = "X";
+      });
+
+      // WINING LOGIC
+      check_win = () => {
+        if (
+          (document.getElementById("box1").innerText ===
+            document.getElementById("box2").innerText &&
+            document.getElementById("box1").innerText ===
+              document.getElementById("box3").innerText &&
+            document.getElementById("box1").innerText !== "") ||
+          (document.getElementById("box4").innerText ===
+            document.getElementById("box5").innerText &&
+            document.getElementById("box4").innerText ===
+              document.getElementById("box6").innerText &&
+            document.getElementById("box4").innerText !== "") ||
+          (document.getElementById("box7").innerText ===
+            document.getElementById("box8").innerText &&
+            document.getElementById("box7").innerText ===
+              document.getElementById("box9").innerText &&
+            document.getElementById("box7").innerText !== "") ||
+          (document.getElementById("box1").innerText ===
+            document.getElementById("box4").innerText &&
+            document.getElementById("box1").innerText ===
+              document.getElementById("box7").innerText &&
+            document.getElementById("box1").innerText !== "") ||
+          (document.getElementById("box2").innerText ===
+            document.getElementById("box5").innerText &&
+            document.getElementById("box2").innerText ===
+              document.getElementById("box8").innerText &&
+            document.getElementById("box2").innerText !== "") ||
+          (document.getElementById("box3").innerText ===
+            document.getElementById("box6").innerText &&
+            document.getElementById("box3").innerText ===
+              document.getElementById("box9").innerText &&
+            document.getElementById("box3").innerText !== "") ||
+          (document.getElementById("box1").innerText ===
+            document.getElementById("box5").innerText &&
+            document.getElementById("box1").innerText ===
+              document.getElementById("box9").innerText &&
+            document.getElementById("box1").innerText !== "") ||
+          (document.getElementById("box3").innerText ===
+            document.getElementById("box5").innerText &&
+            document.getElementById("box3").innerText ===
+              document.getElementById("box7").innerText &&
+            document.getElementById("box3").innerText !== "")
+        ) {
+          change_turn();
+          document
+            .getElementById("side_items")
+            .getElementsByTagName("h3")[0].innerText = turn + " WON THE GAME";
+
+          document
+            .getElementById("side_items")
+            .getElementsByTagName("h3")[0].style =
+            " font-size : 60px; color: red;";
+        } else if (
+          document.getElementById("box1").innerText !== "" &&
+          document.getElementById("box2").innerText !== "" &&
+          document.getElementById("box3").innerText !== "" &&
+          document.getElementById("box4").innerText !== "" &&
+          document.getElementById("box5").innerText !== "" &&
+          document.getElementById("box6").innerText !== "" &&
+          document.getElementById("box7").innerText !== "" &&
+          document.getElementById("box8").innerText !== "" &&
+          document.getElementById("box9").innerText !== ""
+        ) {
+          document
+            .getElementById("side_items")
+            .getElementsByTagName(
+              "h3"
+            )[0].innerText = `NO ONE WON, CLICK ON RESET TO START AGAIN`;
+          document
+            .getElementById("side_items")
+            .getElementsByTagName("h3")[0].style =
+            " font-size : 40px; color: red;";
+        }
+      };
+    </script>
+  </body>
+</html>
+
+
+<!-- THINGS CAN BE ADDED:- 
+Sounds on very click for "X" & "O"
+Game winning sound and any gif pop up for "Congratulations for winning"
+A line joining the three marked "X" or "O" when anyone wins -->
